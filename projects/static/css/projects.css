@@ -141,6 +141,7 @@ table {
 
 
 .my-tasks-list,
+.task-detail,
 .project-list,
 .project-detail {
     background-color: white;
