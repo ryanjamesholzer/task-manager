@@ -40,6 +40,11 @@ header nav ul li a {
 }
 
 
+table tbody tr td a {
+    text-decoration: none;
+}
+
+
 input {
     height: 1.5em;
     margin: 0;
