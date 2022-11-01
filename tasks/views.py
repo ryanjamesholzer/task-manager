@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from tasks.forms import TaskForm
+from tasks.forms import TaskForm, TaskNoteForm
 from tasks.models import Task
 
 # Create your views here.
@@ -19,6 +19,24 @@ def create_task(request):
         "form": form,
     }
     return render(request, "tasks/create.html", context)
+
+
+@login_required
+def create_task_note(request, id):
+    if request.method == "POST":
+        form = TaskNoteForm(request.POST)
+        if form.is_valid():
+            task_note = form.save(False)
+            task_note.task = Task.objects.get(id=id)
+            task_note.is_completed = False
+            task_note.save()
+            return redirect("show_task", id=id)
+    else:
+        form = TaskNoteForm()
+    context = {
+        "form": form,
+    }
+    return render(request, "tasks/notes/create.html", context)
 
 
 @login_required

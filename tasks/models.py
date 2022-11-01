@@ -21,3 +21,10 @@ class Task(models.Model):
         on_delete=models.CASCADE,
         null=True,
     )
+
+
+class TaskNote(models.Model):
+    instruction = models.TextField()
+    task = models.ForeignKey(
+        "Task", related_name="notes", on_delete=models.CASCADE
+    )
