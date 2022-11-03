@@ -23,8 +23,8 @@
                                 <td>
                                     <a href="{% url 'show_task' task.id %}">{{ task.name }}</a>
                                 </td>
-                                <td>{{ task.start_date }}</td>
-                                <td>{{ task.due_date }}</td>
+                                <td>{{ task.start_date|date:"n/j/Y" }}</td>
+                                <td>{{ task.due_date|date:"n/j/Y" }}</td>
                                 <td>{{ task.is_completed|yesno }}</td>
                             </tr>
                         {% endfor %}

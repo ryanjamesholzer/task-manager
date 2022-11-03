@@ -56,6 +56,28 @@ a:hover {
 }
 
 
+.task-detail a,
+.project-list p a,
+.project-detail p a {
+    padding: 3px 5px 5px 3px;
+    background-color: #f8f5e5;
+    border-radius: 8px;
+    border: 1px solid rgb(2, 2, 76);
+}
+
+
+.task-detail a:hover,
+.project-list p a:hover,
+.project-detail p a:hover {
+    padding: 3px 5px 5px 3px;
+    background-color: rgb(2, 2, 76);
+    border-radius: 8px;
+    border: 1px solid rgb(2, 2, 76);
+    color: #f8f5e5;
+    text-decoration: none;
+}
+
+
 input {
     height: 1.5em;
     margin: 0;
@@ -166,6 +188,7 @@ select {
     background-color: #f8f5e5;
     color: rgb(2, 2, 76);
     border-radius: 10px;
+    border: 2px solid rgb(2, 2, 76);
 }
 
 
@@ -186,7 +209,21 @@ select {
 .project-form button {
     padding: .25em 1em;
     color: rgb(2, 2, 76);
-    background-color: #DEDEDE;
+    background-color: #f8f5e5;
+    border: 2px solid rgb(2, 2, 76);
+    border-radius: 10px;
+}
+
+
+.task-form button:hover,
+.my-tasks-list button:hover,
+.login-form button:hover,
+.signup-form button:hover,
+.project-form button:hover {
+    padding: .25em 1em;
+    color: #f8f5e5;
+    background-color: rgb(2, 2, 76);
+    border: 2px solid rgb(2, 2, 76);
     border-radius: 10px;
 }
 

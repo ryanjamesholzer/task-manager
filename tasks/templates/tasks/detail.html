@@ -6,7 +6,7 @@
 {% block content %}
     <div class="task-detail">
         <h1>{{ task.name }}</h1>
-        <p>This task was assigned by {{ task.assignee }} on {{ task.start_date }}</p>
+        <p>This task was assigned by {{ task.assignee }} on {{ task.start_date|date:"n/j/Y" }}</p>
         <a href="{% url 'create_task_note' task.id %}">Add a note</a>
             {% if not task.notes.all %}
                 <p>You have no notes</p>
